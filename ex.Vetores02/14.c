@@ -21,7 +21,9 @@ int main () {
             }
             
         }
-        
+        if (igual == 1) {
+            printf("Possuem valores iguais: %d", vetor[i]);
+        }
     }
 
     return 0;
