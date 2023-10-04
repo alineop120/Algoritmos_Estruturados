@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+/*Dado um valor em reais e a cotação do dólar, converta esse valor para dólares.*/
+
+main () {
+
+    //Declaração das Variáveis
+    float valorReais, contacaoDolar, valorDolar;
+
+    //Entrada de Dados
+    printf("Informe o valor: ");
+    scanf("%f", &valorReais);
+
+    //Converte esse valor para dólares
+    contacaoDolar = 4.96;
+    valorDolar = valorReais / contacaoDolar;
+
+    //Saída de Dados
+    printf("o valor em Dolar e %.2f", valorDolar);
+
+
+}
