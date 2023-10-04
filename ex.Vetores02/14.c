@@ -16,11 +16,12 @@ int main () {
     for (int i = 0; i < 10; i++) {
 //  Percorrer proximas posições para buscar valores iguais
         for (int j = i + 1; j < 10; j++) {
-            if () {
-                
+            if (vetor[i] == vetor[j]) {
+                igual = 1;
             }
             
         }
+        
     }
 
     return 0;
