@@ -21,17 +21,10 @@ int main () {
             }
         }
         if (igual != 1) {
-            printf("Somente valores distintos: %d", vetor[1]);
+            printf("\nSomente valores distintos: %d", vetor[i]);
         }
         
     }
     
-
-
-
-
-
-
-
     return 0;
 }
