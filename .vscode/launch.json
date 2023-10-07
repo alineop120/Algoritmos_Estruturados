@@ -7,16 +7,16 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
+      "externalConsole": false,
       "cwd": "c:/Users/aline.pinho/Documents/algoritmo",
-      "program": "c:/Users/aline.pinho/Documents/algoritmo/build/Release/outRelease",
+      "program": "c:/Users/aline.pinho/Documents/algoritmo/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
-          "ignoreFailures": true
+          "ignoreFailures": false
         }
       ]
     }
