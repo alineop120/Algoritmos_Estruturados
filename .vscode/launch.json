@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/aline.pinho/Downloads/Algoritismo",
-      "program": "c:/Users/aline.pinho/Downloads/Algoritismo/build/Debug/outDebug",
+      "cwd": "c:/Users/aline.pinho/Documents/algoritmo",
+      "program": "c:/Users/aline.pinho/Documents/algoritmo/build/Release/outRelease",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
