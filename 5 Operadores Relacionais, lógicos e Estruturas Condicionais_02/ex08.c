@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /*
     Leia a idade e o tempo de serviço de um trabalhador e escreva se ele pode ou não se aposentar. 
 
@@ -8,8 +6,10 @@
         • Ou ter trabalhado pelo menos 30 anos;, 
         • Ou ter pelo menos 60 anos e trabalhado pelo menos 25 anos. 
 */
+#include <stdio.h>
 
-int main () {
+int main () 
+{
 //  Variáveis
     int idade, tempo_servico;
 
@@ -21,11 +21,14 @@ int main () {
     scanf("%d", &tempo_servico);
 
 //  Executando os Dados Informados e Monstrando o Resultado
-    if ( (idade >= 65) || (tempo_servico >= 30) || (idade >= 60) || (tempo_servico >= 25) ) {
+    if ( (idade >= 65) || (tempo_servico >= 30) || (idade >= 60) || (tempo_servico >= 25) ) 
+    {
         printf("Voce PODE se aposentar");
-    } else {
+    } 
+    else 
+    {
         printf("Voce NAO PODE se aponsentar");
     }
 
-    return 0;
+return 0;
 }
