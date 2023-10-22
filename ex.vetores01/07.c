@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-main(){
+int main()
+{
 
     int vetor[10], maior, posicao;
 
@@ -21,4 +22,5 @@ main(){
     }
     printf("\n\nMaior valor: %d e posicao: %d", maior, posicao);
 
+    return 0;
 }
