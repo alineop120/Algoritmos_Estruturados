@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /*
     Um cinema possui capacidade de 100 lugares e está sempre com ocupação total. Certo dia, cada espectador respondeu a um questionário, no qual constava:
         - sua idade;
@@ -19,8 +17,10 @@
         Percentagem de respostas péssimo e a maior idade que utilizou esta opção;
         Diferença de idade entre a maior idade que respondeu ótimo e a maior idade que respondeu ruim. 
 */
+#include <stdio.h>
 
-int main() {
+int main() 
+{
     int quantidade_otimo = 0;
     int quantidade_bom = 0;
     int quantidade_regular = 0;
@@ -34,7 +34,8 @@ int main() {
 
     int total_espectadores = 100;
 
-    for (int i = 0; i < total_espectadores; i++) {
+    for (int i = 0; i < total_espectadores; i++) 
+    {
         int idade;
         char opiniao;
 
@@ -44,10 +45,12 @@ int main() {
         printf("Digite a opinião (A, B, C, D, E) do espectador %d: ", i + 1);
         scanf(" %c", &opiniao);
 
-        switch (opiniao) {
+        switch (opiniao) 
+        {
             case 'A':
                 quantidade_otimo++;
-                if (idade > maior_idade_otimo) {
+                if (idade > maior_idade_otimo) 
+                {
                     maior_idade_otimo = idade;
                 }
                 break;
@@ -61,13 +64,15 @@ int main() {
                 quantidade_ruim++;
                 soma_idade_ruim += idade;
                 total_ruim++;
-                if (idade > maior_idade_ruim) {
+                if (idade > maior_idade_ruim) 
+                {
                     maior_idade_ruim = idade;
                 }
                 break;
             case 'E':
                 quantidade_pessimo++;
-                if (idade > maior_idade_pessimo) {
+                if (idade > maior_idade_pessimo) 
+                {
                     maior_idade_pessimo = idade;
                 }
                 break;
@@ -87,5 +92,5 @@ int main() {
     printf("Maior idade que respondeu 'Péssimo': %d anos\n", maior_idade_pessimo);
     printf("Diferença de idade entre a maior idade 'Ótimo' e 'Ruim': %d anos\n", maior_idade_otimo - maior_idade_ruim);
 
-    return 0;
+return 0;
 }

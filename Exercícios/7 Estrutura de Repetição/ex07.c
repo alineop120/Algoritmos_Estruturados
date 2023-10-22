@@ -118,5 +118,6 @@ int main()
     printf("\nTotal cadastro homens %d", contadorM);
     printf("\nTotal cadastro mulheres %d", contadorF);
     printf("\nPorcentagem mulheres com caracteristicas especificas %f", porcentagem);
+
 return 0;
 }

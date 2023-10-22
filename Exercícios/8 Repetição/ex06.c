@@ -3,16 +3,19 @@
 */
 #include <stdio.h>
 
-int main() {
+int main() 
+{
     char continuar;
     
-    do {
+    do 
+    {
         int mes, ano;
 
         printf("Digite o mês (1-12): ");
         scanf("%d", &mes);
 
-        if (mes < 1 || mes > 12) {
+        if (mes < 1 || mes > 12) 
+        {
             printf("Mês inválido. Digite um número entre 1 e 12.\n");
             continue;
         }
@@ -20,9 +23,11 @@ int main() {
         printf("Digite o ano: ");
         scanf("%d", &ano);
 
-        if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) {
+        if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) 
+        {
             // Ano bissexto
-            switch (mes) {
+            switch (mes) 
+            {
                 case 2:
                     printf("O mês de fevereiro em %d tem 29 dias (ano bissexto).\n", ano);
                     break;

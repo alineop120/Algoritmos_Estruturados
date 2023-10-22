@@ -25,22 +25,26 @@
 #define MAX_PESSOAS 300
 #define MIN_PESSOAS 50
 
-struct Jogadora {
+struct Jogadora 
+{
     char nome[50];
     int votos;
 };
 
-struct Pessoa {
+struct Pessoa 
+{
     char nome[50];
     int idade;
     char sexo;
     char voto[50];
 };
 
-int main() {
+int main() 
+{
     int num_pessoas = 0;
     struct Pessoa pessoas[MAX_PESSOAS];
-    struct Jogadora jogadoras[MAX_JOGADORAS] = {
+    struct Jogadora jogadoras[MAX_JOGADORAS] = 
+    {
         {"Marta Vieira", 0},
         {"Cristiane Rozeira", 0},
         {"Alex Morgan", 0},
@@ -48,8 +52,10 @@ int main() {
         {"Sam Kerr", 0}
     };
 
-    while (1) {
-        if (num_pessoas >= MAX_PESSOAS) {
+    while (1) 
+    {
+        if (num_pessoas >= MAX_PESSOAS) 
+        {
             printf("Número máximo de pessoas atingido.\n");
             break;
         }
@@ -62,8 +68,10 @@ int main() {
         printf("Nome: ");
         scanf("%s", nome);
 
-        if (strcmp(nome, "FIM") == 0) {
-            if (num_pessoas < MIN_PESSOAS) {
+        if (strcmp(nome, "FIM") == 0) 
+        {
+            if (num_pessoas < MIN_PESSOAS) 
+            {
                 printf("Número mínimo de pessoas não atingido. A pesquisa será encerrada.\n");
             }
             break;
@@ -72,7 +80,8 @@ int main() {
         printf("Idade: ");
         scanf("%d", &idade);
 
-        if (idade < 13) {
+        if (idade < 13) 
+        {
             printf("A idade deve ser maior ou igual a 13 anos. Descartando voto.\n");
             continue;
         }
@@ -80,7 +89,8 @@ int main() {
         printf("Sexo (M/F): ");
         scanf(" %c", &sexo);
 
-        if (sexo != 'M' && sexo != 'F') {
+        if (sexo != 'M' && sexo != 'F') 
+        {
             printf("Sexo deve ser M (masculino) ou F (feminino). Descartando voto.\n");
             continue;
         }
@@ -89,15 +99,18 @@ int main() {
         scanf("%s", voto);
 
         int voto_valido = 0;
-        for (int i = 0; i < MAX_JOGADORAS; i++) {
-            if (strcmp(voto, jogadoras[i].nome) == 0) {
+        for (int i = 0; i < MAX_JOGADORAS; i++) 
+        {
+            if (strcmp(voto, jogadoras[i].nome) == 0) 
+            {
                 voto_valido = 1;
                 jogadoras[i].votos++;
                 break;
             }
         }
 
-        if (!voto_valido) {
+        if (!voto_valido) 
+        {
             printf("Voto inválido. Descartando voto.\n");
             continue;
         }
@@ -117,45 +130,59 @@ int main() {
 
     int max_votos = 0;
     printf("Jogadoras mais votadas:\n");
-    for (int i = 0; i < MAX_JOGADORAS; i++) {
-        if (jogadoras[i].votos > max_votos) {
+    for (int i = 0; i < MAX_JOGADORAS; i++) 
+    {
+        if (jogadoras[i].votos > max_votos) 
+        {
             max_votos = jogadoras[i].votos;
         }
     }
-    for (int i = 0; i < MAX_JOGADORAS; i++) {
-        if (jogadoras[i].votos == max_votos) {
+
+    for (int i = 0; i < MAX_JOGADORAS; i++) 
+    {
+        if (jogadoras[i].votos == max_votos)
+        {
             printf("%s\n", jogadoras[i].nome);
         }
     }
 
     printf("Pessoas que participaram da pesquisa:\n");
     printf("Mulheres:\n");
-    for (int i = 0; i < num_pessoas; i++) {
-        if (pessoas[i].sexo == 'F') {
+    for (int i = 0; i < num_pessoas; i++)
+    {
+        if (pessoas[i].sexo == 'F') 
+        {
             printf("%s, idade: %d\n", pessoas[i].nome, pessoas[i].idade);
         }
     }
     printf("Homens:\n");
-    for (int i = 0; i < num_pessoas; i++) {
-        if (pessoas[i].sexo == 'M') {
+    for (int i = 0; i < num_pessoas; i++) 
+    {
+        if (pessoas[i].sexo == 'M') 
+        {
             printf("%s, idade: %d\n", pessoas[i].nome, pessoas[i].idade);
         }
     }
 
     printf("Pessoas maiores de idade que votaram na Marta Vieira:\n");
-    for (int i = 0; i < num_pessoas; i++) {
-        if (pessoas[i].idade >= 18 && strcmp(pessoas[i].voto, "Marta Vieira") == 0) {
+    for (int i = 0; i < num_pessoas; i++) 
+    {
+        if (pessoas[i].idade >= 18 && strcmp(pessoas[i].voto, "Marta Vieira") == 0) 
+        {
             printf("%s, idade: %d\n", pessoas[i].nome, pessoas[i].idade);
         }
     }
 
     int num_mulheres = 0;
-    for (int i = 0; i < num_pessoas; i++) {
-        if (pessoas[i].sexo == 'F') {
+    for (int i = 0; i < num_pessoas; i++) 
+    {
+        if (pessoas[i].sexo == 'F') 
+        {
             num_mulheres++;
         }
     }
+
     printf("Quantidade de mulheres que participaram da pesquisa: %d\n", num_mulheres);
 
-    return 0;
+return 0;
 }

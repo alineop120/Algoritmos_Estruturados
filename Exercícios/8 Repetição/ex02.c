@@ -14,13 +14,15 @@
 */
 #include <stdio.h>
 
-int main() {
+int main() 
+{
     int num_moradores = 50;
     int elevador_A = 0, elevador_B = 0, elevador_C = 0;
     int matutino = 0, vespertino = 0, noturno = 0;
     int total_servicos = 0;
 
-    for (int i = 0; i < num_moradores; i++) {
+    for (int i = 0; i < num_moradores; i++) 
+    {
         char elevador, periodo;
 
         printf("Morador %d: Qual elevador você utiliza com mais frequência (A/B/C)? ", i + 1);
@@ -31,7 +33,8 @@ int main() {
 
         total_servicos++;
 
-        switch (elevador) {
+        switch (elevador) 
+        {
             case 'A':
                 elevador_A++;
                 break;
@@ -43,7 +46,8 @@ int main() {
                 break;
         }
 
-        switch (periodo) {
+        switch (periodo) 
+        {
             case 'M':
                 matutino++;
                 break;
@@ -58,22 +62,26 @@ int main() {
 
     char periodo_mais_usado;
     int max_periodo = matutino;
-    if (vespertino > max_periodo) {
+    if (vespertino > max_periodo) 
+    {
         max_periodo = vespertino;
         periodo_mais_usado = 'V';
     }
-    if (noturno > max_periodo) {
+    if (noturno > max_periodo) 
+    {
         max_periodo = noturno;
         periodo_mais_usado = 'N';
     }
 
     char elevador_mais_frequentado;
     int max_elevador = elevador_A;
-    if (elevador_B > max_elevador) {
+    if (elevador_B > max_elevador) 
+    {
         max_elevador = elevador_B;
         elevador_mais_frequentado = 'B';
     }
-    if (elevador_C > max_elevador) {
+    if (elevador_C > max_elevador) 
+    {
         max_elevador = elevador_C;
         elevador_mais_frequentado = 'C';
     }
@@ -87,5 +95,5 @@ int main() {
     printf("Diferença percentual entre o mais usado e o menos usado: %.2lf%%\n", diferenca_percentual);
     printf("Percentagem sobre o total de serviços prestados do elevador de média utilização: %.2lf%%\n", percentagem_elevador_media);
 
-    return 0;
+return 0;
 }
