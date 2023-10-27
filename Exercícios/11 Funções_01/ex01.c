@@ -2,15 +2,21 @@
     Escreva uma função que receba por parâmetro dois números e retorne o maior deles.
 */
 #include <stdio.h>
-int maior(int n1, int n2) {
-    if (n1 > n2) {
+
+int maior(int n1, int n2) 
+{
+    if (n1 > n2) 
+    {
         return n1;
-    } else {
+    } 
+    else 
+    {
         return n2;
     }
 }
 
-int main() {
+int main() 
+{
     int num1, num2;
 
     printf("Digite o primeiro numero:\n");
