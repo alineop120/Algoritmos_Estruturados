@@ -11,7 +11,7 @@
 
 // Protótipo
 int opcao_pagamento();
-void preco_aVista();
+void preco_aVista(float total_compra);
 
 int main() 
 {
@@ -21,6 +21,16 @@ int main()
     printf("Digite o total da compra: ");
     scanf("%f", &total_compra);
     opcao = opcao_pagamento();
+
+    switch (opcao)
+    {
+    case 1:
+        preco_aVista(total_compra);
+        break;
+    
+    default:
+        break;
+    }
 
     return 0;
 }
@@ -46,6 +56,14 @@ int opcao_pagamento()
     return opcao_escolha;
 }
 
+void preco_aVista(float total_compra)
+{
+    float desconto = total_compra * 0.10;
+    float valor_final = total_compra - desconto;
+
+    printf("\nTotal do desconto: %.2lf", desconto);
+    printf("\nTotal final da compra: %.2lf", valor_final);
+}
 
 
 
