@@ -82,84 +82,30 @@ void preco_duasVezes(float total_compra)
 
 void preco_maisTresVezes(float total_compra)
 {
+    int parcelas;
+    float juros, valor_final, total_parcela;
     if (total_compra < 100)
     {
         printf("Valor invalido para parcelar em mais tres vezes.");
         return;
     }
-    
-    printf("So vai executar aqui se compra for mais de 100.");    
-}
 
-
-
-
-
-
-
-
-
-/*
-// Opções de Pagamento
-void a_vista(double preco)                    //a vista com 10% de desconto
-{
-    //Desconto 10% = 0.10
-    return preco * 0.10;
-}
-
-void preco_etiqueta(double preco)    //em duas vezes (preço da etiqueta)
-{
-    //Desconto 10% = 0.10
-    double preco_desconto = preco * 0.10;
-    return preco + pow(preco_desconto,2);
-}
-
-void juros_mes(double preco)                              //de 3 até 10 vezes com 3% de juros ao mês (somente para compras acima de R$ 100,00)                   
-{
-    if (preco < 100)
+    do
     {
-        //Fórmula - Juros Simples
-        // JS (Juro Simples) = C (capital) * I (taxa de juro) * T (tempo) 
-    return ;
-    }
-    
+        printf("Digite a quantidade de parcelas: ");
+        scanf("%d", &parcelas);
+        if (parcelas < 3 || parcelas > 10)
+        {
+            printf("Quantidade de parcelas invalida");
+        }
+        
+    } while (parcelas < 3 || parcelas > 10);
+    //calcular o juro
+    juros = total_compra * 0.03;
+    valor_final = total_compra = juros;
+    total_parcela = valor_final / parcelas;
+
+    printf("\nTotal do juros: %.2lf", juros);
+    printf("\nTotal final de cada parcela: %.2lf", total_parcela);
+    printf("\nTotal da compra com juros: %.2lf", valor_final);
 }
-
-// Estrutura do código
-int main()
-{
-    double valor_compra, forma_pagamento;
-    char opcao;
-
-    printf("Informe o valor da compra: ");
-    scanf("%lf", &valor_compra);
-    printf("Informe a forma do pagamento - \n (1) a vista com 10% de desconto \n (2)em duas vezes (preço da etiqueta) \n (3) de 3 até 10 vezes com 3% de juros ao mês (somente para compras acima de R$ 100,00): ");
-    scanf("%s", &opcao);
-
-    // Opções de pagamento
-    switch (opcao)
-    {
-    //a vista com 10% de desconto
-    case 1:
-        forma_pagamento = a_vista(valor_compra); 
-        break;
-
-    //em duas vezes (preço da etiqueta)
-    case 2:
-        forma_pagamento = preco_etiqueta(valor_compra);
-        break;
-    
-    //de 3 até 10 vezes com 3% de juros ao mês (somente para compras acima de R$ 100,00)
-    case 3: 
-        forma_pagamento = juros_mes();
-        break;
-    default:
-        break;
-    }
-
-    // Saída de Dados
-    printf("O total da prestacao e %.2lf", forma_pagamento);
-
-    return 0;
-}
-*/
