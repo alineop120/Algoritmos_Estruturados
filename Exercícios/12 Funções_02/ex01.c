@@ -12,6 +12,9 @@
 // Protótipo
 int opcao_pagamento();
 void preco_aVista(float total_compra);
+void preco_duasVezes(float total_compra);
+void preco_maisTresVezes(float total_compra);
+
 
 int main() 
 {
@@ -27,8 +30,13 @@ int main()
     case 1:
         preco_aVista(total_compra);
         break;
-    
-    default:
+
+    case 2:
+        preco_duasVezes(total_compra);
+        break;
+
+    case 3:
+        preco_maisTresVezes(total_compra);
         break;
     }
 
@@ -63,6 +71,24 @@ void preco_aVista(float total_compra)
 
     printf("\nTotal do desconto: %.2lf", desconto);
     printf("\nTotal final da compra: %.2lf", valor_final);
+}
+
+void preco_duasVezes(float total_compra) 
+{
+    float valor_parcela = total_compra / 2;
+    printf("\nTotal da compra: %.2lf", total_compra);
+    printf("\nTotal final de cada parcela: %.2lf", valor_parcela);
+}
+
+void preco_maisTresVezes(float total_compra)
+{
+    if (total_compra < 100)
+    {
+        printf("Valor invalido para parcelar em mais tres vezes.");
+        return;
+    }
+    
+    printf("So vai executar aqui se compra for mais de 100.");    
 }
 
 
