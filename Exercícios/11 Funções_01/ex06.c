@@ -21,7 +21,7 @@ int main()
 
     resultado = imc(peso, altura);
 
-    printf("O IMC da pessoa e ", resultado);
+    printf("O IMC da pessoa e %.2f", resultado);
 
     return 0;
 }
