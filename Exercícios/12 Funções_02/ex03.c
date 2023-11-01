@@ -20,6 +20,19 @@ void imprimirMatriz(int matriz[10][10])
         printf("\n");
     }
 }
+// (a) a linha 2 com a linha 8
+void troca_linha2Linha8(int matriz[10][10])
+{
+    int aux;
+
+    for (int j = 0; j < 10; j++)
+    {
+        aux = matriz[1][j];
+        matriz[1][j] = matriz[7][j];
+        matriz[7][j] = aux;
+    }
+    
+}
 
 int main()
 {
@@ -29,11 +42,11 @@ int main()
     {
         for(int j = 0; j < 10; j++)
         {
-            matriz[i][j] = i*10 + j; 
+            matriz[i][j] = i * 10 + j; 
         }
     }
 
-    imprimirMatriz(matriz[10][10]);
+    imprimirMatriz(matriz);
 
 }
 /*
