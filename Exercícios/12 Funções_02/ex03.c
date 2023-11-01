@@ -20,6 +20,7 @@ void imprimirMatriz(int matriz[10][10])
         printf("\n");
     }
 }
+
 // (a) a linha 2 com a linha 8
 void troca_linha2Linha8(int matriz[10][10])
 {
