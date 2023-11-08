@@ -42,6 +42,28 @@ void imprimir(Aluno a[], int totalCadastro)
     
 }
 
+void buscar(Aluno a[], int indice)
+{
+    if (indice == 0)
+    {
+        printf("Nao existe alunos cadastrados.");
+    }
+    else
+    {
+        printf("Buscar: ");
+        fflush(stdin);
+        fgets(a[indice].nome, sizeof(a[indice].nome), stdin);
+        fflush(stdin);
+        for (int i = 0; i < indice; i++)
+        {
+            printf("Nome: %s", a[i].nome);
+            printf("Idade: %d", a[i].idade);
+            printf("\n\n");
+        }
+        
+    }
+}
+
 int main () 
 {
     Aluno a[TAM];
@@ -51,6 +73,7 @@ int main ()
     {
         printf("Digite 1 para cadastrar\n");
         printf("Digite 2 para para imprimir os cadastros\n");
+        printf("Digite 3 para buscar cadastro\n");
         printf("Digite 0 para para encerrar o programa\n");
         scanf("%d", &opcao);
 
@@ -72,6 +95,9 @@ int main ()
             //mostrar todos os cadastros
             imprimir(a, totalCadastro);
             break;
+        case 3:
+            //Buscar cadastro
+            buscar(a, totalCadastro);
 
         default:
             break;
