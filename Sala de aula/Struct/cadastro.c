@@ -6,16 +6,21 @@ typedef struct
 {
     char nome[20];
     int idade;
+    int id;
 }
 Aluno;
 
 void cadastrar(Aluno a[], int indice)
 {
-    printf("digite o nome do aluno: ");
+    printf("Digite o id: ");
+    fflush(stdin);
+    scanf("%d", &a[indice].idade);
+    fflush(stdin);
+    printf("Digite o nome do aluno: ");
     fflush(stdin);
     fgets(a[indice].nome, sizeof(a[indice].nome), stdin);
     fflush(stdin);
-    printf("digite a idade do aluno: ");
+    printf("Digite a idade do aluno: ");
     fflush(stdin);
     scanf("%d", &a[indice].idade);
     fflush(stdin);
@@ -42,39 +47,39 @@ void imprimir(Aluno a[], int totalCadastro)
     
 }
 
-void buscar(Aluno a[], int indice)
+void buscarRegistro(Aluno a[], int totalCadastro, int buscarId)
 {
-    if (indice == 0)
+    if (totalCadastro == 0)
     {
-        printf("Nao existe alunos cadastrados.");
+        printf("Nao existe na lista.");
     }
     else
     {
-        printf("Buscar: ");
-        fflush(stdin);
-        fgets(a[indice].nome, sizeof(a[indice].nome), stdin);
-        fflush(stdin);
-        for (int i = 0; i < indice; i++)
+        for (int i = 0; i < totalCadastro; i++)
         {
-            printf("Nome: %s", a[i].nome);
-            printf("Idade: %d", a[i].idade);
-            printf("\n\n");
+            if (a[i].id == buscarId) 
+            {
+                printf("Nome do registro encontrado: %s", a[i].nome);
+                return;
+            } 
         }
         
     }
+    printf("Registro nao encontrado.");
+    printf("\n\n");
 }
 
 int main () 
 {
     Aluno a[TAM];
-    int opcao, totalCadastro = 0;
+    int opcao, totalCadastro = 0, buscarId;
 
     do
     {
         printf("Digite 1 para cadastrar\n");
-        printf("Digite 2 para para imprimir os cadastros\n");
-        printf("Digite 3 para buscar cadastro\n");
-        printf("Digite 0 para para encerrar o programa\n");
+        printf("Digite 2 para imprimir os cadastros\n");
+        printf("Digite 3 para buscar um cadastro\n");
+        printf("Digite 0 para encerrar o programa\n");
         scanf("%d", &opcao);
 
         switch (opcao)
@@ -97,7 +102,9 @@ int main ()
             break;
         case 3:
             //Buscar cadastro
-            buscar(a, totalCadastro);
+            printf("Digite o id para buscar: ");
+            scanf("%d", &buscarId);
+            buscarRegistro(a, totalCadastro, buscarId);
 
         default:
             break;
