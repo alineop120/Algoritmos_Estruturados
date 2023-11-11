@@ -152,8 +152,8 @@ int excluirRegistro(Aluno a[], int totalCadastro, int buscarId)
             }
             achou = 1;
             printf("Excluido com sucesso.");
+            return;
         }
-        return;
     }
     achou = 0;
     return achou;
