@@ -7,15 +7,14 @@ typedef struct
     char nome[20];
     int idade;
     int id;
+    int status;
 }
 Aluno;
 
 void cadastrar(Aluno a[], int indice)
 {
-    printf("Digite o id: ");
-    fflush(stdin);
-    scanf("%d", &a[indice].idade);
-    fflush(stdin);
+    a[indice].status = 1;
+    a[indice].id = rand() % 200;
     printf("Digite o nome do aluno: ");
     fflush(stdin);
     fgets(a[indice].nome, sizeof(a[indice].nome), stdin);
@@ -38,8 +37,10 @@ void imprimir(Aluno a[], int totalCadastro)
     {
         for (int i = 0; i < totalCadastro; i++)
         {
-            printf("Nome: %s", a[i].nome);
-            printf("Idade: %d", a[i].idade);
+            printf("\nId: %d", a[i].id);
+            printf("\nNome: %s", a[i].nome);
+            printf("\nIdade: %d", a[i].idade);
+            a[i].status == 1 ? printf("\nStatus: Ativo") : printf("\nStatus: Inativo");     //operador ternário
             printf("\n\n");
         }
         
@@ -51,7 +52,8 @@ void buscarRegistro(Aluno a[], int totalCadastro, int buscarId)
 {
     if (totalCadastro == 0)
     {
-        printf("Nao existe na lista.");
+        printf("\nNao existe cadastro na lista.");
+        return;
     }
     else
     {
@@ -59,14 +61,81 @@ void buscarRegistro(Aluno a[], int totalCadastro, int buscarId)
         {
             if (a[i].id == buscarId) 
             {
-                printf("Nome do registro encontrado: %s", a[i].nome);
+                printf("\nNome do registro encontrado: %d", a[i].nome);
                 return;
             } 
         }
         
     }
-    printf("Registro nao encontrado.");
+    printf("\nRegistro nao encontrado.");
     printf("\n\n");
+}
+
+void alterarRegistro(Aluno a[], int totalCadastro, int buscarId) 
+{
+    int opcaoEscolhida;
+    
+    if (totalCadastro == 0)
+    {
+        printf("Lista vazia.");
+        return;
+    }
+    else
+    {
+        for (int i = 0; i < totalCadastro; i++)
+        {
+            if (a[i].id == buscarId)
+            {
+                printf("\nNome: %s", a[i].nome);
+                printf("\nIdade: %d", a[i].idade);
+                printf("\nStatus: %d", a[i].status);
+
+                printf("Alterar os dados: ");
+
+                printf("Ditige 1 para alterar o nome, Digite 2 para alterar a idade, Digite 3 para alterar o status ou Digite 4 para alterar todos os campos");
+                scanf("%d", &opcaoEscolhida);
+                switch (opcaoEscolhida)
+                {
+                case 1:
+                    printf("Alteracao do nome:");
+                    fflush(stdin);
+                    fgets(a[i].nome, sizeof(a[i].nome), stdin);
+                    fflush(stdin);
+                    break;
+                case 2:
+                    printf("Alteracao da idade:");
+                    fflush(stdin);
+                    scanf("%d", &a[i].idade);
+                    fflush(stdin);
+                    break;
+                case 3:
+                    printf("Alteracao do status: 1 - Ativo / 0 - Inativo");
+                    fflush(stdin);
+                    scanf("%d", &a[i].status);
+                    fflush(stdin);
+                    break;
+                case 4:
+                    printf("Alteracao do nome:");
+                    fflush(stdin);
+                    fgets(a[i].nome, sizeof(a[i].nome), stdin);
+                    fflush(stdin);
+                    printf("Alteracao da idade:");
+                    scanf("%d", &a[i].idade);
+                    fflush(stdin);
+                    printf("Alteracao do status: 1 - Ativo / 0 - Inativo");
+                    fflush(stdin);
+                    scanf("%d", &a[i].status);
+                    fflush(stdin);
+                    break;
+                default:
+                    break;
+                }
+            }
+            
+        }
+        
+    }
+    
 }
 
 int main () 
@@ -79,6 +148,7 @@ int main ()
         printf("Digite 1 para cadastrar\n");
         printf("Digite 2 para imprimir os cadastros\n");
         printf("Digite 3 para buscar um cadastro\n");
+        printf("Digite 4 para alterar cadastro\n");
         printf("Digite 0 para encerrar o programa\n");
         scanf("%d", &opcao);
 
@@ -101,18 +171,22 @@ int main ()
             imprimir(a, totalCadastro);
             break;
         case 3:
-            //Buscar cadastro
+            //buscar cadastro
             printf("Digite o id para buscar: ");
             scanf("%d", &buscarId);
             buscarRegistro(a, totalCadastro, buscarId);
-
+            break;
+        case 4:
+            //alterar
+            printf("Digite o id para alterar: ");
+            scanf("%d", &buscarId);
+            alterarRegistro(a, totalCadastro, buscarId);
+            break;
         default:
             break;
         }
     } 
     while (opcao != 0);
-    
-    
-    
+
     return 0;
 }
