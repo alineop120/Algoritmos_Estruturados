@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define TAM 3
 
 //modelo do registro
@@ -127,8 +128,6 @@ void alterarRegistro(Aluno a[], int totalCadastro, int buscarId)
                     scanf("%d", &a[i].status);
                     fflush(stdin);
                     break;
-                default:
-                    break;
                 }
             }
             
@@ -136,6 +135,30 @@ void alterarRegistro(Aluno a[], int totalCadastro, int buscarId)
         
     }
     
+}
+
+void excluir(Aluno a[], int totalCadastro, int buscarId)
+{
+    if (totalCadastro == 0)
+    {
+        printf("Lista vazia.");
+        return;
+    }
+    else
+    {
+        for(int i = 0; i < totalCadastro; i++)
+        {
+            if(a[i].id = buscarId)
+            {
+                //registro encontrado - exclusão
+                for (int j = i; j < totalCadastro - 1; j++)
+                {
+                    a[j] = a[j + 1];
+                }
+                
+            }
+        }
+    }
 }
 
 int main () 
@@ -149,6 +172,7 @@ int main ()
         printf("Digite 2 para imprimir os cadastros\n");
         printf("Digite 3 para buscar um cadastro\n");
         printf("Digite 4 para alterar cadastro\n");
+        printf("Digite 5 para excluir o cadastro\n");
         printf("Digite 0 para encerrar o programa\n");
         scanf("%d", &opcao);
 
@@ -182,11 +206,15 @@ int main ()
             scanf("%d", &buscarId);
             alterarRegistro(a, totalCadastro, buscarId);
             break;
-        default:
+        case 5:
+            //excluir
+            printf("Digite o id para excluir: ");
+            scanf("%d", &buscarId);
+            excluirRegistro(a, totalCadastro, buscarId);
+            totalCadastro--;
             break;
         }
     } 
     while (opcao != 0);
-
     return 0;
 }
