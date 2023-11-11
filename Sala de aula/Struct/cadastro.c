@@ -137,29 +137,28 @@ void alterarRegistro(Aluno a[], int totalCadastro, int buscarId)
     
 }
 
-void excluirRegistro(Aluno a[], int totalCadastro, int buscarId)
+int excluirRegistro(Aluno a[], int totalCadastro, int buscarId)
 {
-    if (totalCadastro == 0)
+    int achou;
+    
+    for(int i = 0; i < totalCadastro; i++)
     {
-        printf("Lista vazia.");
+        if(a[i].id = buscarId)
+        {
+            //registro encontrado - exclusão
+            for (int j = i; j < totalCadastro - 1; j++)
+            {
+                a[j] = a[j + 1];
+            }
+            achou = 1;
+            printf("Excluido com sucesso.");
+        }
         return;
     }
-    else
-    {
-        for(int i = 0; i < totalCadastro; i++)
-        {
-            if(a[i].id = buscarId)
-            {
-                //registro encontrado - exclusão
-                for (int j = i; j < totalCadastro - 1; j++)
-                {
-                    a[j] = a[j + 1];
-                }
-                printf("Excluido com sucesso.");
-            }
-        }
-    }
+    achou = 0;
+    return achou;
 }
+
 
 int main () 
 {
@@ -210,8 +209,23 @@ int main ()
             //excluir
             printf("Digite o id para excluir: ");
             scanf("%d", &buscarId);
-            excluirRegistro(a, totalCadastro, buscarId);
-            totalCadastro--;
+            if(totalCadastro = 0)
+            {
+                printf("Lista vazia");
+            }
+            else
+            {
+                int res = excluirRegistro(a, totalCadastro, buscarId);
+                if (res == 1)
+                {
+                    totalCadastro--;
+                }
+                else
+                {
+                    printf("");
+                }
+            }
+            
             break;
         }
     } 
