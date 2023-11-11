@@ -137,7 +137,7 @@ void alterarRegistro(Aluno a[], int totalCadastro, int buscarId)
     
 }
 
-void excluir(Aluno a[], int totalCadastro, int buscarId)
+void excluirRegistro(Aluno a[], int totalCadastro, int buscarId)
 {
     if (totalCadastro == 0)
     {
@@ -155,7 +155,7 @@ void excluir(Aluno a[], int totalCadastro, int buscarId)
                 {
                     a[j] = a[j + 1];
                 }
-                
+                printf("Excluido com sucesso.");
             }
         }
     }
