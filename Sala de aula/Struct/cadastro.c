@@ -222,7 +222,7 @@ int main ()
                 }
                 else
                 {
-                    printf("");
+                    printf("Nao foi possivel excluir - aluno nao encontrado");
                 }
             }
             
