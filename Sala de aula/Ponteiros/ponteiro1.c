@@ -1,8 +1,13 @@
 /*
-    Ponteiros
-        Variável que armazena o endereço de outra variável.
     Variável
         Armazena dados.
+    Ponteiros
+        Variável que armazena o endereço de outra variável.
+    
+    int *p -> declaração do ponteiro;
+    p -> manipulação ou recuperação do conteúdo do ponteiro;
+    *p -> manipulação ou recuperação do conteúdo da variável para qual o ponteiro aponta;
+    &p -> reucperação do end de memoria do ponteiro.
 */
 #include <stdio.h>
 
