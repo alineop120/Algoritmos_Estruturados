@@ -14,7 +14,6 @@ int main()
         if (ponteiro == NULL)
         {
             printf("Sem memoria suficinte.");
-            return;
         }
 
         printf("Conteudo do ponteiro: %p.", ponteiro);
