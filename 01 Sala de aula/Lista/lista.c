@@ -13,6 +13,7 @@ typedef struct Pessoa
     struct Pessoa *prox;
 }
 Pessoa;
+
 Pessoa* criarListaVazia()
 {
     return NULL;
@@ -27,6 +28,7 @@ Pessoa* criarPessoa()
     }
     
 }
+
 Pessoa* cadastrar(Pessoa *lista)
 {
     Pessoa *novaPessoa = criarPessoa();
@@ -36,6 +38,22 @@ Pessoa* cadastrar(Pessoa *lista)
     fgets(novaPessoa->nome, sizeof(novaPessoa->nome), stdin);
     printf("\nDigite a idade: ");
     scanf("%d", &novaPessoa->idade);
+
+    if (lista == NULL)
+    {
+        return novaPessoa;
+    }
+    else
+    {
+        Pessoa* atual = lista;
+        while(atual->prox != NULL)
+        {
+            atual = atual->prox;
+        }
+        atual->prox = novaPessoa;
+        return lista;
+    }
+    
 }
 
 int main()
