@@ -19,11 +19,23 @@ Pessoa* criarListaVazia()
 }
 Pessoa* criarPessoa()
 {
-    Pessoa *novaPessoa =
+    Pessoa *novaPessoa = (Pessoa*)malloc(sizeof(Pessoa));
+    if (novaPessoa == NULL)
+    {
+        printf("Erro de alocacao de memoria");
+        exit(EXIT_FAILURE);
+    }
+    
 }
 Pessoa* cadastrar(Pessoa *lista)
 {
-    
+    Pessoa *novaPessoa = criarPessoa();
+    srand(time(NULL));
+    novaPessoa->id = rand() % 100;
+    printf("\nDigite o nome: ");
+    fgets(novaPessoa->nome, sizeof(novaPessoa->nome), stdin);
+    printf("\nDigite a idade: ");
+    scanf("%d", &novaPessoa->idade);
 }
 
 int main()
