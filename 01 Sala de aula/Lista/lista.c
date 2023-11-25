@@ -18,15 +18,14 @@ Pessoa* criarListaVazia()
 {
     return NULL;
 }
-Pessoa* criarPessoa()
-{
+
+Pessoa* criarPessoa(){
     Pessoa *novaPessoa = (Pessoa*)malloc(sizeof(Pessoa));
     if (novaPessoa == NULL)
     {
         printf("Erro de alocacao de memoria");
         exit(EXIT_FAILURE);
     }
-    
 }
 
 Pessoa* cadastrar(Pessoa *lista)
@@ -35,8 +34,10 @@ Pessoa* cadastrar(Pessoa *lista)
     srand(time(NULL));
     novaPessoa->id = rand() % 100;
     printf("\nDigite o nome: ");
+    fflush(stdin);
     fgets(novaPessoa->nome, sizeof(novaPessoa->nome), stdin);
     printf("\nDigite a idade: ");
+    fflush(stdin);
     scanf("%d", &novaPessoa->idade);
 
     if (lista == NULL)
@@ -53,6 +54,27 @@ Pessoa* cadastrar(Pessoa *lista)
         atual->prox = novaPessoa;
         return lista;
     }
+}
+
+void mostrarLista(Pessoa *lista)
+{
+    Pessoa *atual = lista;
+    if (atual == NULL)
+    {
+        printf("Lista vazia.");
+        return;
+    }
+    else
+    {
+        while(atual != NULL)
+        {
+            printf("Nome: %s", atual->nome);
+            printf("ID: %d", atual->id);
+            printf("Nome: %d", atual->idade);
+            print("\n");
+            atual = atual->prox;
+        }
+    }
     
 }
 
@@ -64,30 +86,28 @@ int main()
 
     do
     {
-        printf("Digite um opcao a seguir:");
-        printf("1 - cadastrar");
-        printf("2 - mostrar");
-        printf("3 - buscar um registro");
-        printf("4 - alterar um registro");
-        printf("5 - excluir um registro");
-        printf("0 - sair do programa");
-    
+        printf("Digite um opcao a seguir:\n");
+        printf("1 - cadastrar\n");
+        printf("2 - mostrar\n");
+        printf("3 - buscar um registro\n");
+        printf("4 - alterar um registro\n");
+        printf("5 - excluir um registro\n");
+        printf("0 - sair do programa\n");
+        scanf("%d", &opcao);
+
         switch (opcao)
         {
         case 1:
-            
+            lista = cadastrar(lista);
             break;
         case 2:
-            
+
             break;
         case 3:
-            
             break;
         case 4:
-            
             break;
         case 5:
-            
             break;
         default:
             break;
@@ -95,6 +115,5 @@ int main()
 
     } while (opcao != 0);
     
-
     return 0;
 }
