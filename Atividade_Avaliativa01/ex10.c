@@ -74,9 +74,9 @@ int main()
     {
         double media_acidentes_RS = total_acidentes_RS / num_cidades_RS;
         printf("a) Maior índice de acidentes pertence a %s com %d acidentes.\n", cidade_maior_acidente, maior_acidente);
-        printf("b)   Menor índice de acidentes pertence a %s com %d acidentes.\n", cidade_menor_acidente, menor_acidente);
-        printf("c) Média de veículos nas cidades brasileiras: %.2lf\n", total_veiculos / num_cidades);
-        printf("cd) Média de acidentes com vítimas entre as cidades do Rio Grande do Sul: %.2lf\n", media_acidentes_RS);
+        printf("   Menor índice de acidentes pertence a %s com %d acidentes.\n", cidade_menor_acidente, menor_acidente);
+        printf("b) Média de veículos nas cidades brasileiras: %.2lf\n", total_veiculos / num_cidades);
+        printf("c) Média de acidentes com vítimas entre as cidades do Rio Grande do Sul: %.2lf\n", media_acidentes_RS);
     } 
     else 
     {
