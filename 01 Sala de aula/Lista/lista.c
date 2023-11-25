@@ -17,6 +17,10 @@ Pessoa* criarListaVazia()
 {
     return NULL;
 }
+Pessoa* criarPessoa()
+{
+    Pessoa *novaPessoa =
+}
 
 int main()
 {
