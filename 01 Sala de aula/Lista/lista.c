@@ -21,6 +21,10 @@ Pessoa* criarPessoa()
 {
     Pessoa *novaPessoa =
 }
+Pessoa* cadastrar(Pessoa *lista)
+{
+    
+}
 
 int main()
 {
