@@ -74,8 +74,7 @@ void mostrarLista(Pessoa *lista)
             print("\n");
             atual = atual->prox;
         }
-    }
-    
+    }  
 }
 
 int main()
