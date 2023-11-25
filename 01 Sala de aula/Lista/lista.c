@@ -13,10 +13,15 @@ typedef struct Pessoa
     struct Pessoa *prox;
 }
 Pessoa;
+Pessoa* criarListaVazia()
+{
+    return NULL;
+}
 
 int main()
 {
-    
+    Pessoa *lista;
+    lista = criarListaVazia();
     int opcao;
 
     do
