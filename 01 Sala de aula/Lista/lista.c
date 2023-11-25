@@ -71,7 +71,7 @@ void mostrarLista(Pessoa *lista)
             printf("Nome: %s", atual->nome);
             printf("ID: %d", atual->id);
             printf("Nome: %d", atual->idade);
-            print("\n");
+            printf("\n");
             atual = atual->prox;
         }
     }  
