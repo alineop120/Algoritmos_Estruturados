@@ -4,38 +4,30 @@
 #include <stdio.h>
 
 int main() {
-    // Inicialize as variáveis para armazenar o número e altura do aluno mais baixo e mais alto
-    int aluno_mais_baixo, aluno_mais_alto;
-    float altura_mais_baixa = __FLT_MAX__;  // Inicializado com FLT_MAX para garantir que qualquer altura seja menor
+    int numero_mais_baixo = 0;
+    int numero_mais_alto = 0;
+    float altura_mais_baixa = 1000;
     float altura_mais_alta = 0;
 
-    // Loop para ler os dados dos alunos
-    for (int i = 1; i <= 10; ++i) {  // Itera sobre 10 conjuntos de valores
+    for (int i = 0; i < 10; i++) {
         int numero_aluno;
         float altura_aluno;
-
-        printf("Digite o número do %dº aluno: ", i);
+        printf("Digite o número do aluno: ");
         scanf("%d", &numero_aluno);
-
-        printf("Digite a altura do %dº aluno em metros: ", i);
+        printf("Digite a altura do aluno em metros: ");
         scanf("%f", &altura_aluno);
-
-        // Verifica se é o aluno mais baixo
-        if (altura_aluno < altura_mais_baixa) {
-            aluno_mais_baixo = numero_aluno;
-            altura_mais_baixa = altura_aluno;
-        }
-
-        // Verifica se é o aluno mais alto
         if (altura_aluno > altura_mais_alta) {
-            aluno_mais_alto = numero_aluno;
             altura_mais_alta = altura_aluno;
+            numero_mais_alto = numero_aluno;
+        }
+        if (altura_aluno < altura_mais_baixa) {
+            altura_mais_baixa = altura_aluno;
+            numero_mais_baixo = numero_aluno;
         }
     }
 
-    // Exibe os resultados
-    printf("\nAluno mais baixo: Número %d, Altura: %.2f metros\n", aluno_mais_baixo, altura_mais_baixa);
-    printf("Aluno mais alto: Número %d, Altura: %.2f metros\n", aluno_mais_alto, altura_mais_alta);
+    printf("O aluno mais baixo é o número %d com %.2f metros.\n", numero_mais_baixo, altura_mais_baixa);
+    printf("O aluno mais alto é o número %d com %.2f metros.\n", numero_mais_alto, altura_mais_alta);
 
     return 0;
 }
